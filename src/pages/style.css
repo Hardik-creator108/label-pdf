@@ -1,0 +1,89 @@
+.header{
+    display: contents;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    
+}
+.bbb{
+    border-style: outset;
+    border-radius: 0%;
+    border-width: 10px;
+    border-color: black;
+    align-items: center;
+    margin: auto;
+}
+.aaa{
+    
+    font-size: 16pt;
+    color: black;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-top: -40px;
+    margin-bottom: 15px;
+    
+   
+}
+
+.Form-Container {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    
+    border-style: outset;
+    border-radius: 0%;
+    border-width: 5px;
+    border-color: black;
+    align-items: center;
+    
+}
+
+.section1{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+}
+.section2{
+    align-content: center;
+    text-align: center;
+    font-size: medium;
+    padding: 2px;
+    padding-right: 37px;
+}
+.container1{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.section3{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.section4 {
+    font-size: medium;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    justify-content: center;    
+}
+.section5{
+    font-size: large;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
