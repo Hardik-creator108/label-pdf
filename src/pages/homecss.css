@@ -1,30 +1,30 @@
 .container{
-      display: block;
-      align-content: center;
       
+      
+      height: 438px;
+      background-color: antiquewhite;
+          
 }
 
-.potrait{
-    margin-top: 50px;
-    align-content: center;
-    justify-items: center;
+.container1{
+
+    justify-content: space-evenly;
+    padding: 20px;
+    
+}
+
+.button{
+    text-align: center;
+    cursor: pointer;
+    font-size: 22pt;
+    background-color: #003580;
+    color: antiquewhite;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 20px;
     justify-content: center;
-    justify-items: center;
-}
-
-.landscape{
-    margin-top: 50px;
-}
-.nav{
-    margin: auto;
-    display: flexbox;
 }
 
 
-.footer{
-    border-style: outset;
-    border-width: 2px;
-    border-color: black;
-    padding: -5px;
-}
+
 

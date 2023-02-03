@@ -12,7 +12,7 @@ function Landscape() {
   const [cost, setCost] = useState('');
   const [image, setImage] = useState(null);
   const [stOsQty, setStOsQty] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  //const [imageUrl, setImageUrl] = useState('');
   const [currentDate, setCurrentDate] = useState('');
   const [supplierName, setSupplierName] = useState('');
   const [sizeQty, setSizeQty] = useState('');

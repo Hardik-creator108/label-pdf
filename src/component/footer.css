@@ -1,4 +1,7 @@
 .footer{
-    align-content: center;
+    display: flex;
     font-size: medium;
+    background-color: #003580;
+    color: white;
+    height: 50px;
 }

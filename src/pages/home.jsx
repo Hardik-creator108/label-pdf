@@ -1,31 +1,38 @@
 import React from "react";
-import Navbar from "../component/navbar";
-import Landscape from "./landscape";
-import Potrait from "./potrait";
-import './homecss.css';
-import { Label } from "semantic-ui-react";
-import Footer from "../component/footer";
+import { Link, Outlet } from "react-router-dom";
 
-function Home () {
-    return(
-        <>
-        <div className="container">
-            <div className="nav">
-                
-                <Navbar/>
+import './homecss.css';
+
+
+function Home() {
+  return(
+    
+    <div className="container">
+      
+      <div className="">
+       
+            
+          
+          <div className="container1">
+            <Link to="/potrait"><button className="button">Potrait</button></Link>
             </div>
-            <div className="potrait"> 
-                <Potrait/>
+          <div className="container1">
+            <Link to="/landscape"><button className="button">Landscape</button></Link>
             </div>
-            <div className="landscape">
-                
+          <div className="container1">
+          <button className="button" >
+            <a href="https://dcalloc.opmsales.com/" target="_blank"  rel="external" className="button">
+            Allocation Calculator
+            </a>
+            </button>
             </div>
-            <div className="footer">
-                <Footer/>
-            </div>
-        </div>
-        </>
-    );
+       
+      
+</div>
+      
+      <Outlet/>
+    </div>
+  );
 }
 
 export default Home;

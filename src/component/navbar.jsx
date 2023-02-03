@@ -1,19 +1,24 @@
-import React from 'react';
-import { Label } from 'semantic-ui-react';
-import './navbar.css';
-
+import "./navbar.css";
+import React from "react";
+import logo from './logo.jpg';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
-    <nav className='conatiner'>
-      <Label className='header'>SVP Sports - Distribution Center</Label>
-    </nav>
-    <div className='body'>
+    <div className="navbar">
+      <div className="navContainer">
+        <Link to='/'>
+        <span className="logo"><img src={logo} alt="SVP-Sports"/></span>
+        </Link>
+        </div>
+        <div className="navItems">        
+          <span className="header"><header>SVP Sports - Distribution Center</header></span>
+        </div>
+
+       
       
     </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

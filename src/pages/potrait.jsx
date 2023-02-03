@@ -3,6 +3,7 @@ import PotraitPdf from '../component/potrait';
 //import {Form, Input, Label} from 'semantic-ui-react';
 import { useEffect } from 'react';
 import './style.css';
+//import { PDFViewer } from '@react-pdf/renderer';
 
 function Potrait() {
   const [description, setDescription] = useState('');
@@ -12,7 +13,7 @@ function Potrait() {
   const [cost, setCost] = useState('');
   const [image, setImage] = useState(null);
   const [stOsQty, setStOsQty] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+ // const [imageUrl, setImageUrl] = useState('');
   const [currentDate, setCurrentDate] = useState('');
   const [supplierName, setSupplierName] = useState('');
   const [sizeQty, setSizeQty] = useState('');
@@ -33,6 +34,7 @@ function Potrait() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowPDF(true);
+    
    
     
     // You can pass the form data to the PDF component here
@@ -124,12 +126,12 @@ function Potrait() {
       </label>
       
       <div className='container1'>
-      <button type="submit" className='section5' >Print</button>
+      <button type="submit" className='section5'>Print</button>
       </div>
     </form>
     )}
     </div>
-    {showPDF && (
+    {showPDF && (      
    <PotraitPdf
     description={description} 
     styleno={styleno} 
@@ -143,6 +145,7 @@ function Potrait() {
     stOsQty={stOsQty}
     
   />
+ 
   )}
   
 
