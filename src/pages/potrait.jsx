@@ -58,7 +58,7 @@ function Potrait() {
       <label className='section1'>
         Supplier Name
         <br/>
-        <input type="text" value={supplierName} onChange={(e) => setSupplierName(e.target.value)} className='section2' />
+        <input type="text" value={supplierName} required='true' onChange={(e) => setSupplierName(e.target.value)} className='section2' />
       </label>
       </div>
       
@@ -73,42 +73,42 @@ function Potrait() {
       <label className='section1'>
         Description
         <br/>
-        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} className='section2'/>
+        <input type="text"  required= 'true' value={description} onChange={(e) => setDescription(e.target.value)} className='section2'/>
       </label>
       </div>
       <div className='container1'>
       <label className='section1'>
         Style No
         <br/>
-        <input type="text" value={styleno} onChange={(e) => setStyleno(e.target.value)} className='section2' />
+        <input type="text" value={styleno} required='true' onChange={(e) => setStyleno(e.target.value)} className='section2' />
       </label>
       </div>
       <div className='container1'>
       <label className='section1'>
         Color
         <br/>
-        <input type="text" value={color} onChange={(e) => setColor(e.target.value)} className='section2' />
+        <input type="text" value={color} required='true' onChange={(e) => setColor(e.target.value)} className='section2' />
       </label>
       </div>
       <div className='container1'>
       <label className='section1'>
         Regular Price
         <br/>
-        <input type="text" value={regularPrice} onChange={(e) => setRegularPrice(e.target.value)} className='section2' />
+        <input type="text" value={regularPrice} required='true'  onChange={(e) => setRegularPrice(e.target.value)} className='section2' />
       </label>
       </div>
       <div className='container1'>
       <label className='section1'>
         Cost
         <br/>
-        <input type="text" value={cost} onChange={(e) => setCost(e.target.value)} className='section2' />
+        <input type="text" value={cost} required='true' onChange={(e) => setCost(e.target.value)} className='section2' />
       </label>
       </div>
       <div className='container1'>
       <label className='section1'>
         ST + OS QTY
         <br/>
-        <input type="text" value={stOsQty} onChange={(e) => setStOsQty(e.target.value)} className='section2' />
+        <input type="text" required='true' value={stOsQty} onChange={(e) => setStOsQty(e.target.value)} className='section2' />
       </label>
       </div>
       <div className='container1'>

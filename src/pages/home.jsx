@@ -10,7 +10,6 @@ function Home() {
     <div className="container">
       
       <div className="">
-       
             
           
           <div className="container1">

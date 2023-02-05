@@ -1,8 +1,11 @@
 .container{
       
       
-      height: 438px;
+      max-height: 100%;
+      height: 440px;
       background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
           
 }
 
@@ -10,6 +13,7 @@
 
     justify-content: space-evenly;
     padding: 20px;
+    
     
 }
 

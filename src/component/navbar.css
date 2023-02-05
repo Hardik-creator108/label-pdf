@@ -3,7 +3,7 @@
   background-color: #003580;
  display: flex;
  
- 
+  
   
 }
 
@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: left;
   margin-left: 100px;
+  flex-direction: row;
   
 }
 
@@ -28,18 +29,22 @@
 .header{
   text-align: center;
   color: white;
-  
+  display: flex;
+ 
   
 }
 
 .navItems{
-  justify-content: center;
-  margin-left: -300px;
-  margin-right: 195px;
+  justify-content: flex-start;
+  margin-left: -400px;
+  margin-right:0px;
   width: 150%;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-size: 36pt;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+
 }
