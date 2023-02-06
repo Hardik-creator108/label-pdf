@@ -15,7 +15,7 @@ function LanscapePdf({ description, styleno, color, regularPrice, cost,image, cu
                     <Text style={styles.section4}>{supplierName}</Text>
                     <Text style={styles.section4}>{sizeQty}</Text>
                 </View>
-                <View wrap>
+                <View wrap={true}>
                     <Text style={styles.section1}>{description}</Text>
                 </View>
                 <View style={styles.container1}>
@@ -32,7 +32,7 @@ function LanscapePdf({ description, styleno, color, regularPrice, cost,image, cu
                     
                     
                 </View>
-                <View style={styles.container4} >
+                <View >
                    
                {image && <Image src={URL.createObjectURL(image)} style={styles.img}/>}
                 </View>
