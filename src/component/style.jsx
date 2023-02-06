@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
                 
     },
     container4:{
-         width:'55%',
-         height: '55%',
+         width:'65%',
+         height: '60%',
          alignContent:'center',
          justifyContent:'center',
          alignSelf:'center',
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
 
     },
     img: {
-        width: '50%',
-        height: '50%',
+        width: '65%',
+        height: '60%',
         alignSelf: 'center',
         marginTop: '0px',
         

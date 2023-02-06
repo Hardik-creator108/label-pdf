@@ -32,7 +32,7 @@ function LanscapePdf({ description, styleno, color, regularPrice, cost,image, cu
                     
                     
                 </View>
-                <View style={styles.container4} fixed>
+                <View style={styles.container4} >
                    
                {image && <Image src={URL.createObjectURL(image)} style={styles.img}/>}
                 </View>
