@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
 
     },
     img: {
-        width: '65px',
-        height: '60px',
+        width: '65%',
+        height: '55%',
         alignSelf: 'center',
-        marginTop: '0px',
+        
         
         
     },
