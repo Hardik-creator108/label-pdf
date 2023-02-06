@@ -1,10 +1,17 @@
 .navbar{
   height: 80px;
   background-color: #003580;
- display: flex;
- 
+ display: flex; 
   
-  
+}
+
+@media only screen and (max-width: 600px) {
+  header{
+    font-size: 16pt;
+    justify-content: right;
+    display: flex;
+    margin-left: 200px;
+  }
 }
 
 .navContainer{
@@ -41,8 +48,8 @@
   width: 150%;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 36pt;
-  font-weight: bold;
+  font-size: 32pt;
+  font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;

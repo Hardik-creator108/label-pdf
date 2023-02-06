@@ -23,7 +23,7 @@ function LanscapePdf({ description, styleno, color, regularPrice, cost, image, i
                 </View>
                 <View style={styles.container1}>
                     <Text style={styles.section2}>{color}</Text>
-                    <Text style={styles.section2}>{regularPrice}</Text>
+                    <Text style={styles.section2}>R - {regularPrice}</Text>
                     
                 </View>
                 <View style={styles.container2}>

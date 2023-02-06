@@ -4,9 +4,9 @@ import { StyleSheet } from "@react-pdf/renderer";
 const styles = StyleSheet.create({
     section1: {
         textAlign: 'center',
-        fontSize: '45pt',
-        fontWeight: 'extrabold',
-        margin: '10px'
+        fontSize: '40pt',
+        fontWeight: 'bold',
+        margin: '5px'
     },
     container1: {
         display: 'flex',

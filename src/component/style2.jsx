@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
     section1: {
         textAlign: 'center',
         fontSize: '36pt',
-        fontWeight: 'extrabold',
-        margin: '15px'
+        fontWeight: 'bold',
+        margin: '5px'
     },
     container1: {
         display: 'flex',
