@@ -7,7 +7,7 @@ import './App.css';
 import Landscape from './pages/landscape';
 import Potrait from './pages/potrait';
 import Footer from './component/footer';
-
+import Sticker from './pages/sticker';
 
 export default function App(){
   return(
@@ -17,6 +17,7 @@ export default function App(){
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/potrait' element={<Potrait/>}/>
+        <Route path='/stickerland' element={<Sticker/>}/>
         <Route path='/landscape' element={<Landscape/>}/>
         
       </Routes>

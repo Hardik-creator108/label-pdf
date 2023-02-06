@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         margin: '5px'
     },
-    container1: {
+    container1: { 
         display: 'flex',
         flexDirection: 'row', 
         justifyContent: 'space-evenly',
@@ -21,11 +21,23 @@ const styles = StyleSheet.create({
         fontWeight: 'normal'
                 
     },
+    container4:{
+         width:'55%',
+         height: '55%',
+         alignContent:'center',
+         justifyContent:'center',
+         alignSelf:'center',
+         alignItems:'center',
+         margin:'5px'
+
+    },
     img: {
-        width: '55%',
-        height: '65%',
+        width: '50%',
+        height: '50%',
         alignSelf: 'center',
-        marginTop: '10px'
+        marginTop: '0px',
+        
+        
     },
     container2: {
         display: 'flex',

@@ -16,6 +16,10 @@ function Landscape() {
   const [currentDate, setCurrentDate] = useState('');
   const [supplierName, setSupplierName] = useState('');
   const [sizeQty, setSizeQty] = useState('');
+  
+  
+
+  
 
 
   useEffect(() => {
@@ -120,9 +124,10 @@ function Landscape() {
         Image
         <br/>
         <div className='container1'>
-        <input type="file" onChange={handleImageChange} accept="image/*" className='section4' />
+        <input type="file" onChange={handleImageChange}  accept="image/*" className='section4' />
         </div>
       </label>
+      
       
       <div className='container1'>
       <button type="submit" className='section5' >Print</button>
@@ -137,11 +142,12 @@ function Landscape() {
     color={color} 
     regularPrice={regularPrice} 
     cost={cost} 
-    image={image}
+     image={image}
     currentDate={currentDate}
     supplierName={supplierName}
     sizeQty={sizeQty}
     stOsQty={stOsQty}
+    
     
   />
   )}

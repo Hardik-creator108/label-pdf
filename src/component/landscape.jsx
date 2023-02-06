@@ -3,22 +3,22 @@ import { Document, Page, Image, Text, PDFViewer, View } from '@react-pdf/rendere
 import styles from './style';
 
 
-function LanscapePdf({ description, styleno, color, regularPrice, cost, image, imageUrl, currentDate, supplierName, sizeQty, stOsQty }) {
+function LanscapePdf({ description, styleno, color, regularPrice, cost,image, currentDate, supplierName, sizeQty, stOsQty }) {
 
     
     return (
-        <PDFViewer style={{ width: '100%', height: '550px'}}>
+        <PDFViewer style={{ width: '100%', height: '650px'}}>
       <Document>
-        <Page size="Letter" orientation="landscape">
+        <Page size="Letter" orientation="landscape" wrap={false}>
             <View>
                 <View style={styles.container3}>
                     <Text style={styles.section4}>{supplierName}</Text>
                     <Text style={styles.section4}>{sizeQty}</Text>
                 </View>
-                <View>
+                <View wrap>
                     <Text style={styles.section1}>{description}</Text>
                 </View>
-                <View>
+                <View style={styles.container1}>
                     <Text style={styles.section1}>{styleno}</Text>
                 </View>
                 <View style={styles.container1}>
@@ -32,9 +32,11 @@ function LanscapePdf({ description, styleno, color, regularPrice, cost, image, i
                     
                     
                 </View>
-                <View>
-                    {image && <Image src={URL.createObjectURL(image)} style={styles.img} />}
+                <View style={styles.container4} fixed>
+                   
+               {image && <Image src={URL.createObjectURL(image)} style={styles.img}/>}
                 </View>
+                
            </View>
         </Page>
       </Document>

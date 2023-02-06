@@ -15,6 +15,9 @@ function Home() {
           <div className="container1">
             <Link to="/potrait"><button className="button">Potrait</button></Link>
             </div>
+            <div className="container1">
+            <Link to="/stickerland"><button className="button">Landscape-URL</button></Link>
+            </div>
           <div className="container1">
             <Link to="/landscape"><button className="button">Landscape</button></Link>
             </div>
