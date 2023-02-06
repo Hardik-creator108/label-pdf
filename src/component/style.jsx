@@ -22,13 +22,7 @@ const styles = StyleSheet.create({
                 
     },
     container4:{
-         width:'65%',
-         height: '60%',
-         alignContent:'center',
-         justifyContent:'center',
-         alignSelf:'center',
-         alignItems:'center',
-         margin:'5px'
+       
 
     },
     img: {
