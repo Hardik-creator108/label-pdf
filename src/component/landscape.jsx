@@ -6,19 +6,19 @@ import styles from './style';
 function LanscapePdf({ description, styleno, color, regularPrice, cost,image, currentDate, supplierName, sizeQty, stOsQty }) {
 
     
-    return (
+    return ( 
         <PDFViewer style={{ width: '100%', height: '650px'}}>
       <Document>
-        <Page size="Letter" orientation="landscape" wrap={false}>
+        <Page size="Letter" orientation="landscape" wrap={false} >
             <View>
                 <View style={styles.container3}>
                     <Text style={styles.section4}>{supplierName}</Text>
                     <Text style={styles.section4}>{sizeQty}</Text>
                 </View>
-                <View wrap={true}>
-                    <Text style={styles.section1}>{description}</Text>
+                <View wrap={true} style={styles.container}>
+                    <Text style={styles.sectiond}>{description}</Text>
                 </View>
-                <View style={styles.container1}>
+                <View style={styles.container}>
                     <Text style={styles.section1}>{styleno}</Text>
                 </View>
                 <View style={styles.container1}>

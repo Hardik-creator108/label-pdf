@@ -7,62 +7,64 @@ function PotraitPdf({ description, styleno, color, regularPrice, cost, image, im
 
     
     return (
-        <PDFViewer style={{ width: '100%', height: '550px'}}>
+        <PDFViewer style={{ width: '100%', height: '850px'}}>
       <Document>
-        <Page size="Letter" orientation="portrait">
+        <Page size="Letter" orientation="portrait" wrap={false} >
+            <View>
             <View >
-                <View style={styles.container3}>
-                    <Text style={styles.section4}>{supplierName}</Text>
-                    <Text style={styles.section4}>{sizeQty}</Text>
+            <View style={styles.container1}>
+                    <Text style={styles.section1} >{supplierName}</Text>
+                    <Text style={styles.section1}>{sizeQty}</Text>
                 </View>
-                <View>
-                    <Text style={styles.section1}>{description}</Text>
-                </View>
-                <View>
-                    <Text style={styles.section1}>{styleno}</Text>
-                </View>
-                <View style={styles.container1}>
-                    <Text style={styles.section2}>{color}</Text>
-                    <Text style={styles.section2}>R - {regularPrice}</Text>
-                    
+                <View wrap={true} style={styles.container2}>
+                    <Text style={styles.sectiond}>{description}</Text>
                 </View>
                 <View style={styles.container2}>
-                    <Text style={styles.section3}>{stOsQty} - </Text>
-                    <Text style={styles.section3}>{currentDate}{cost}</Text>
-                    
+                    <Text style={styles.section2}>{styleno}</Text>
+                </View>
+                <View style={styles.container3}>
+                    <Text style={styles.section4}>{color}</Text>
+                    <Text style={styles.section4}>R - {regularPrice}</Text>
                     
                 </View>
-                <View>
-                    {image && <Image src={URL.createObjectURL(image)} style={styles.img} />}
-                </View>
-                <Document>
-            <View style={styles.container7}>
                 <View style={styles.container4}>
-                    <Text style={styles.section5}>{supplierName}</Text>
-                    <Text style={styles.section5}>{sizeQty}</Text>
-                </View>
-                <View>
-                    <Text style={styles.section6}>{description}</Text>
-                </View>
-                <View>
-                    <Text style={styles.section9}>{styleno}</Text>
+                    <Text style={styles.section5}>{stOsQty} - </Text>
+                    <Text style={styles.section5}>{currentDate}{cost}</Text>
+                    
+                    
                 </View>
                 <View style={styles.container5}>
-                    <Text style={styles.section7}>{color}</Text>
-                    <Text style={styles.section7}>{regularPrice}</Text>
+                   
+               {image && <Image src={URL.createObjectURL(image)} style={styles.img}/>}
+                </View>  
+            </View>
+            <View >
+            <View style={styles.container1}>
+                    <Text style={styles.section1} >{supplierName}</Text>
+                    <Text style={styles.section1}>{sizeQty}</Text>
+                </View>
+                <View wrap={true} style={styles.container2}>
+                    <Text style={styles.section2}>{description}</Text>
+                </View>
+                <View style={styles.container2}>
+                    <Text style={styles.section2}>{styleno}</Text>
+                </View>
+                <View style={styles.container3}>
+                    <Text style={styles.section4}>{color}</Text>
+                    <Text style={styles.section4}>R - {regularPrice}</Text>
                     
                 </View>
-                <View style={styles.container6}>
-                    <Text style={styles.section8}>{stOsQty} - </Text>
-                    <Text style={styles.section8}>{currentDate}{cost}</Text>
+                <View style={styles.container4}>
+                    <Text style={styles.section5}>{stOsQty} - </Text>
+                    <Text style={styles.section5}>{currentDate}{cost}</Text>
                     
                     
                 </View>
-                <View style={{position:'relative'}}>
-                    {image && <Image src={URL.createObjectURL(image)} style={styles.img1} />}
+                <View style={styles.container5}>
+                   
+               {image && <Image src={URL.createObjectURL(image)} style={styles.img}/>}
                 </View>
             </View>
-            </Document>
            </View>
         </Page>
       </Document>

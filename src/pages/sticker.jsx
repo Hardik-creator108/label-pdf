@@ -149,7 +149,7 @@ const Sticker = (props) => {
                     <Text style={styles.section4}>{sizeQty}</Text>
                 </View>
                 <View wrap>
-                    <Text style={styles.section1}>{description}</Text>
+                    <Text style={styles.sectiond}>{description}</Text>
                 </View>
                 <View style={styles.container1}>
                     <Text style={styles.section1}>{styleno}</Text>

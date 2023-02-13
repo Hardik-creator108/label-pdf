@@ -21,6 +21,9 @@ function Home() {
           <div className="container1">
             <Link to="/landscape"><button className="button">Landscape</button></Link>
             </div>
+            <div className="container1">
+            <Link to="/rawproduct"><button className="button">Label - Raw Product</button></Link>
+            </div>
           <div className="container1">
           <button className="button" >
             <a href="https://dcalloc.opmsales.com/" target="_blank"  rel="external" className="button">

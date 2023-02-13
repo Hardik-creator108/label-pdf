@@ -8,6 +8,7 @@ import Landscape from './pages/landscape';
 import Potrait from './pages/potrait';
 import Footer from './component/footer';
 import Sticker from './pages/sticker';
+import RawProduct from './pages/rawproduct';
 
 export default function App(){
   return(
@@ -19,6 +20,7 @@ export default function App(){
         <Route path='/potrait' element={<Potrait/>}/>
         <Route path='/stickerland' element={<Sticker/>}/>
         <Route path='/landscape' element={<Landscape/>}/>
+        <Route path='/rawproduct' element={<RawProduct/>}/>
         
       </Routes>
       <Footer/>

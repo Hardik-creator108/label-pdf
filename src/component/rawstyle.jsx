@@ -4,14 +4,14 @@ import { StyleSheet } from "@react-pdf/renderer";
 const styles = StyleSheet.create({
     sectiond: {
         textAlign: 'center',
-        fontSize: '35px',
+        fontSize: '60px',
         margin: '10px',   
         
     },
     section1:{
         textAlign:'center',
-        fontSize:'62px',
-        margin:'10px',
+        fontSize:'72px',
+        margin:'5px',
         fontWeight:'extrabold'
     },
     container:{
@@ -24,9 +24,10 @@ const styles = StyleSheet.create({
     container1: { 
         display: 'flex',
         flexDirection: 'row', 
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         textAlign :'center', 
-        width: '100%'      
+        width: '100%',
+        margin:'5px'      
     },
     section2: {
         textAlign:'center',
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     },
     img: {
         width: '400px',
-        height: '300px',
+        height: '250px',
         alignSelf: 'center',
         margin: '5px'        
         
@@ -59,9 +60,18 @@ const styles = StyleSheet.create({
       
         
     },
+    section5: {
+        textAlign:'center',
+        fontSize: '52pt',
+        fontWeight: 'normal',
+        margin: '10px',
+        textDecoration:'underline',
+        color:'#FF3F80'
+       
+    },
     section4: {
         textAlign:'center',
-        fontSize: '24pt',
+        fontSize: '48pt',
         fontWeight: 'normal',
         margin: '10px',
        

@@ -126,7 +126,7 @@ function Landscape() {
         <div className='container1'>
         <input type="file" onChange={handleImageChange}  accept="image/*" className='section4' />
         </div>
-      </label>
+      </label> 
       
       
       <div className='container1'>
