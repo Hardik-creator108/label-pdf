@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         margin: '10px',
         textDecoration:'underline',
-        color:'#FF3F80'
+        color:'#8B0000'
        
     },
     section4: {
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
         fontSize: '48pt',
         fontWeight: 'normal',
         margin: '10px',
+        color:'#8B0000'
        
     },
     container3: {
