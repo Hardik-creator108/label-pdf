@@ -3,7 +3,7 @@ import { Document, Page, Image, Text, PDFViewer, View } from '@react-pdf/rendere
 import styles from './style';
 
 
-function LanscapePdf({ description, styleno, color, regularPrice, cost,image, currentDate, supplierName, sizeQty, stOsQty }) {
+function LanscapePdf({ description, styleno, color, regularPrice, cost,image, currentDate,value, supplierName, sizeQty, stOsQty }) {
 
     
     return ( 
@@ -12,7 +12,7 @@ function LanscapePdf({ description, styleno, color, regularPrice, cost,image, cu
         <Page size="Letter" orientation="landscape" wrap={false} >
             <View>
                 <View style={styles.container3}>
-                    <Text style={styles.section4}>{supplierName}</Text>
+                    <Text style={styles.section4}>{value}</Text>
                     <Text style={styles.section4}>{sizeQty}</Text>
                 </View>
                 <View wrap={true} style={styles.container}>

@@ -99,3 +99,14 @@
     font-weight: bold;
 }
 
+.section6 {
+    align-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    justify-content: center;
+    padding: 0px;
+    padding-right: 68px;
+    padding-left: 68px;
+     
+}

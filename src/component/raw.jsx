@@ -5,7 +5,7 @@ import arrowlh from './arrowlh.png';
 import arrowrh from './arrowrh.png';
 
 
-function RawPdf({ supplierName, currentDate, totalSkid, image, invoiceNo }) {
+function RawPdf({ supplierName, currentDate, totalSkid, image, date,invoiceNo, value, selectedDate}) {
 
     
     return (
@@ -15,13 +15,13 @@ function RawPdf({ supplierName, currentDate, totalSkid, image, invoiceNo }) {
             <View>
             <View >
             <View style={styles.container1}>
-                    <Text style={styles.section1} >{supplierName}</Text>
+                    <Text style={styles.section1} >{value}</Text>
                 </View>
                 <View  style={styles.container1}>
                     <Text style={styles.sectiond}>Invoice No.#{invoiceNo}</Text>
                 </View>
                 <View style={styles.container1}>
-                    <Text style={styles.section4}>Received Date: {currentDate}</Text>
+                    <Text style={styles.section4}>Received Date: {date}</Text>
                     
                 </View>
                 <View style={styles.container1}>
@@ -42,13 +42,13 @@ function RawPdf({ supplierName, currentDate, totalSkid, image, invoiceNo }) {
             <View>
             <View >
             <View style={styles.container1}>
-                    <Text style={styles.section1} >{supplierName}</Text>
+                    <Text style={styles.section1} >{value}</Text>
                 </View>
                 <View  style={styles.container1}>
                     <Text style={styles.sectiond}>Invoice No.#{invoiceNo}</Text>
                 </View>
                 <View style={styles.container1}>
-                    <Text style={styles.section4}>Received Date: {currentDate}</Text>
+                    <Text style={styles.section4}>Received Date: {date}</Text>
                     
                 </View>
                 <View style={styles.container1}>

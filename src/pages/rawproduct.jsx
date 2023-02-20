@@ -7,6 +7,15 @@ import RawPdf from '../component/raw';
 import { Image } from '@react-pdf/renderer';
 //import { PDFViewer } from '@react-pdf/renderer';
 import arrowlh from '../component/arrowlh.png';
+import Autosuggest from 'react-autosuggest';
+import {format, addDays} from 'date-fns';
+
+
+
+const suppliers = ['NIKE', 'ADIDAS', 'ASICS', 'BEARPAW', 'CARHARTT', 'CAT', 'CHAMPION', 'CONVERSE', 'DICKIES', 'FANATICS', 'FILA', 'HAGGAR', 'HH', 'HERSCHEL', 'HOTSOX',
+                    'JANSPORTS', 'JF SPORTS', 'K.BELL', 'KAMIK', ' KAPPA', 'KEDS', 'KENNETH COLE', 'KODIAK', 'LETSFIT', 'MERRELL', 'NEW BALANCE','NEW ERA',
+                    'OAKLEY', 'PETS FIRST', 'PRO-KEDS', 'PUMA', 'REEBOK', 'SANUK', 'SAUCONY', 'SPERRY', 'SVP SPORTS', 'THE NORTH FACE', 'TERRA', 'TERVIS','TIMBERLAND',
+                    'TIMBERLAND PR', 'UMBRO', 'VANS', 'WESC', 'WILSON', 'WOLVERINE', 'WOLVERINE/KEDS', 'LEVELWEAR']
 
 function RawProduct() {
   const [invoiceNo, setInvoiceNo] = useState('');
@@ -15,6 +24,10 @@ function RawProduct() {
  // const [imageUrl, setImageUrl] = useState('');
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
   const [supplierName, setSupplierName] = useState('');
+  const [date,setDate] = useState('');
+  const [value, setValue] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   useEffect(() => {
    const intervalId = setInterval(()=>{
@@ -26,9 +39,45 @@ function RawProduct() {
    };
   }, []);
 
-  
+  const handleDateChange = date => {
+    setSelectedDate(date);
+  };
 
+
+
+
+  const getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    return inputLength === 0 ? [] : suppliers.filter(supplier =>
+      supplier.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
   
+  
+  
+    const onInputChange = (event, { newValue }) => {
+      setValue(newValue);
+    };
+  
+    const onSuggestionsFetchRequested = ({ value }) => {
+      setSuggestions(getSuggestions(value));
+    };
+  
+    const onSuggestionsClearRequested = () => {
+      setSuggestions([]);
+    };
+  
+    const inputProps = {
+      placeholder: 'Supplier Name',
+      value,
+      onChange: onInputChange,
+      className:'section2'
+    };
+  
+    const shouldRenderSuggestions = value => {
+      return true;
+    };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,12 +101,23 @@ function RawProduct() {
     {!showPDF && (
     <form onSubmit={handleSubmit} >
       <div className='container1'>       
-        
-      <label className='section1'>
-        Supplier Name
+        <label className='section1'>Supplier
         <br/>
-        <input type="text" value={supplierName} required='true' onChange={(e) => setSupplierName(e.target.value)} className='section2' />
-      </label>
+        
+       <Autosuggest
+       
+      suggestions={suggestions}
+      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+      onSuggestionsClearRequested={onSuggestionsClearRequested}
+      getSuggestionValue={suggestion => suggestion}
+      renderSuggestion={suggestion => <span>{suggestion}</span>}
+      inputProps={inputProps}
+      shouldRenderSuggestions={shouldRenderSuggestions}
+      
+    />
+   
+    </label>
+    
       </div>
       
       <div className='container1'>
@@ -76,7 +136,12 @@ function RawProduct() {
       </div>
       <div className='container1'>
       <label className='section1'>Received Date <br/>
-      <input type="text" className='section2' value={currentDate} readOnly/>
+      <input
+        type="date"
+        className='section6'
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+      />
       </label>
       </div>
       <div>
@@ -93,9 +158,9 @@ function RawProduct() {
     </div>
     {showPDF && (      
    <RawPdf
-    supplierName={supplierName}
+    value={value}
     invoiceNo={invoiceNo}
-    currentDate={currentDate}
+   date={date}
     totalSkid={totalSkid}
     image={Image}
 

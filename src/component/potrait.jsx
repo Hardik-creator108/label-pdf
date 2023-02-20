@@ -3,7 +3,7 @@ import { Document, Page, Image, Text, PDFViewer, View } from '@react-pdf/rendere
 import styles from './style2';
 
 
-function PotraitPdf({ description, styleno, color, regularPrice, cost, image, imageUrl, currentDate, supplierName, sizeQty, stOsQty }) {
+function PotraitPdf({ description, styleno, color, regularPrice,value, cost, image, imageUrl, currentDate, supplierName, sizeQty, stOsQty }) {
 
     
     return (
@@ -13,7 +13,7 @@ function PotraitPdf({ description, styleno, color, regularPrice, cost, image, im
             <View>
             <View >
             <View style={styles.container1}>
-                    <Text style={styles.section1} >{supplierName}</Text>
+                    <Text style={styles.section1} >{value}</Text>
                     <Text style={styles.section1}>{sizeQty}</Text>
                 </View>
                 <View wrap={true} style={styles.container2}>
@@ -40,7 +40,7 @@ function PotraitPdf({ description, styleno, color, regularPrice, cost, image, im
             </View>
             <View >
             <View style={styles.container1}>
-                    <Text style={styles.section1} >{supplierName}</Text>
+                    <Text style={styles.section1} >{value}</Text>
                     <Text style={styles.section1}>{sizeQty}</Text>
                 </View>
                 <View wrap={true} style={styles.container2}>

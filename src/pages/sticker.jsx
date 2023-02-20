@@ -5,8 +5,13 @@ import '../pages/style.css';
 //import Landscape from './landscape';
 //import LanscapePdf from '../component/url';
 import styles from '../component/style';
+import Autosuggest from 'react-autosuggest';
 
 
+const suppliers = ['NIKE', 'ADIDAS', 'ASICS', 'BEARPAW', 'CARHARTT', 'CAT', 'CHAMPION', 'CONVERSE', 'DICKIES', 'FANATICS', 'FILA', 'HAGGAR', 'HH', 'HERSCHEL', 'HOTSOX',
+                    'JANSPORTS', 'JF SPORTS', 'K.BELL', 'KAMIK', ' KAPPA', 'KEDS', 'KENNETH COLE', 'KODIAK', 'LETSFIT', 'MERRELL', 'NEW BALANCE','NEW ERA',
+                    'OAKLEY', 'PETS FIRST', 'PRO-KEDS', 'PUMA', 'REEBOK', 'SANUK', 'SAUCONY', 'SPERRY', 'SVP SPORTS', 'THE NORTH FACE', 'TERRA', 'TERVIS','TIMBERLAND',
+                    'TIMBERLAND PR', 'UMBRO', 'VANS', 'WESC', 'WILSON', 'WOLVERINE', 'WOLVERINE/KEDS', 'LEVELWEAR']
 
 const Sticker = (props) => {
   const [formData, setFormData] = useState({
@@ -27,6 +32,9 @@ const Sticker = (props) => {
   const [currentDate, setCurrentDate] = useState('');
   const [supplierName, setSupplierName] = useState('');
   const [sizeQty, setSizeQty] = useState('');
+  const [value, setValue] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+
 
   useEffect(() => {
     const date = new Date().toLocaleDateString('en-US', {
@@ -36,6 +44,38 @@ const Sticker = (props) => {
     setCurrentDate(date);
   }, []);
 
+  const getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    return inputLength === 0 ? [] : suppliers.filter(supplier =>
+      supplier.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
+  
+  
+  
+    const onInputChange = (event, { newValue }) => {
+      setValue(newValue);
+    };
+  
+    const onSuggestionsFetchRequested = ({ value }) => {
+      setSuggestions(getSuggestions(value));
+    };
+  
+    const onSuggestionsClearRequested = () => {
+      setSuggestions([]);
+    };
+  
+    const inputProps = {
+      placeholder: 'Supplier Name',
+      value,
+      onChange: onInputChange,
+      className:'section2'
+    };
+  
+    const shouldRenderSuggestions = value => {
+      return true;
+    };
 
 
   const [showPDF, setShowPDF] = useState(false);
@@ -60,11 +100,22 @@ const Sticker = (props) => {
            <div className='container1'>
          
         
-         <label className='section1'>
-           Supplier Name
-           <br/>
-           <input type="text" required="true" value={supplierName} onChange={(e) => setSupplierName(e.target.value)} className='section2' />
-         </label>
+           <label className='section1'>Supplier
+        <br/>
+        
+       <Autosuggest
+       
+      suggestions={suggestions}
+      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+      onSuggestionsClearRequested={onSuggestionsClearRequested}
+      getSuggestionValue={suggestion => suggestion}
+      renderSuggestion={suggestion => <span>{suggestion}</span>}
+      inputProps={inputProps}
+      shouldRenderSuggestions={shouldRenderSuggestions}
+      
+    />
+   
+    </label>
          </div>
          
          <div className='container1'>
@@ -145,7 +196,7 @@ const Sticker = (props) => {
         <Page size="Letter" orientation="landscape" wrap={false}>
             <View>
                 <View style={styles.container3}>
-                    <Text style={styles.section4}>{supplierName}</Text>
+                    <Text style={styles.section4}>{value}</Text>
                     <Text style={styles.section4}>{sizeQty}</Text>
                 </View>
                 <View wrap>

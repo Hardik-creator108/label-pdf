@@ -3,6 +3,12 @@ import LandscapePdf from '../component/landscape';
 //import {Form, Input, Label} from 'semantic-ui-react';
 import { useEffect } from 'react';
 import './style.css';
+import Autosuggest from 'react-autosuggest';
+
+const suppliers = ['NIKE', 'ADIDAS', 'ASICS', 'BEARPAW', 'CARHARTT', 'CAT', 'CHAMPION', 'CONVERSE', 'DICKIES', 'FANATICS', 'FILA', 'HAGGAR', 'HH', 'HERSCHEL', 'HOTSOX',
+                    'JANSPORTS', 'JF SPORTS', 'K.BELL', 'KAMIK', ' KAPPA', 'KEDS', 'KENNETH COLE', 'KODIAK', 'LETSFIT', 'MERRELL', 'NEW BALANCE','NEW ERA',
+                    'OAKLEY', 'PETS FIRST', 'PRO-KEDS', 'PUMA', 'REEBOK', 'SANUK', 'SAUCONY', 'SPERRY', 'SVP SPORTS', 'THE NORTH FACE', 'TERRA', 'TERVIS','TIMBERLAND',
+                    'TIMBERLAND PR', 'UMBRO', 'VANS', 'WESC', 'WILSON', 'WOLVERINE', 'WOLVERINE/KEDS', 'LEVELWEAR']
 
 function Landscape() {
   const [description, setDescription] = useState('');
@@ -16,7 +22,8 @@ function Landscape() {
   const [currentDate, setCurrentDate] = useState('');
   const [supplierName, setSupplierName] = useState('');
   const [sizeQty, setSizeQty] = useState('');
-  
+  const [value, setValue] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
   
 
   
@@ -30,7 +37,38 @@ function Landscape() {
     setCurrentDate(date);
   }, []);
 
+  const getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    return inputLength === 0 ? [] : suppliers.filter(supplier =>
+      supplier.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
   
+  
+  
+    const onInputChange = (event, { newValue }) => {
+      setValue(newValue);
+    };
+  
+    const onSuggestionsFetchRequested = ({ value }) => {
+      setSuggestions(getSuggestions(value));
+    };
+  
+    const onSuggestionsClearRequested = () => {
+      setSuggestions([]);
+    };
+  
+    const inputProps = {
+      placeholder: 'Supplier Name',
+      value,
+      onChange: onInputChange,
+      className:'section2'
+    };
+  
+    const shouldRenderSuggestions = value => {
+      return true;
+    };
 
    
 
@@ -58,11 +96,22 @@ function Landscape() {
       <div className='container1'>
          
         
-      <label className='section1'>
-        Supplier Name
+      <label className='section1'>Supplier
         <br/>
-        <input type="text" required="true" value={supplierName} onChange={(e) => setSupplierName(e.target.value)} className='section2' />
-      </label>
+        
+       <Autosuggest
+       
+      suggestions={suggestions}
+      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+      onSuggestionsClearRequested={onSuggestionsClearRequested}
+      getSuggestionValue={suggestion => suggestion}
+      renderSuggestion={suggestion => <span>{suggestion}</span>}
+      inputProps={inputProps}
+      shouldRenderSuggestions={shouldRenderSuggestions}
+      
+    />
+   
+    </label>
       </div>
       
       <div className='container1'>
@@ -144,7 +193,7 @@ function Landscape() {
     cost={cost} 
      image={image}
     currentDate={currentDate}
-    supplierName={supplierName}
+    value={value}
     sizeQty={sizeQty}
     stOsQty={stOsQty}
     
